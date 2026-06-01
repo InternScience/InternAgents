@@ -232,6 +232,102 @@ INTERNAGENTS_UI_PORT=3001 INTERNAGENTS_BACKEND_PORT=2025 ./scripts/dev.sh
 - 可以先确认它读对了文件。
 - 后续再让它写文件或修改代码会更稳。
 
+# 远程工作区配置说明
+
+这份说明用于从本机已有的 SSH config 添加一台远程机器，让 InternAgents 在远端启动 runtime，并把远端目录作为工作区使用。
+
+## 依赖条件
+
+本机需要：
+
+- 已经能用 SSH 免交互登录远端机器。
+- `~/.ssh/config` 里已经配置好可用的 `Host`。
+- 本机能执行 `ssh <Host>`，不需要在 InternAgents 里填写 IP、用户名、私钥路径或 SSH 命令。
+- 本机正在运行 InternAgents UI / backend / local runtime。
+
+远端机器需要：
+
+- 能通过 SSH 登录。
+- 能访问你配置的模型服务。如果远端网络或地区不能访问某个模型，会出现模型 API 报错，例如 `This model is not available in your region`。
+- 有权限创建 runtime 安装目录和工作区目录。
+
+## SSH config 示例
+
+InternAgents 只读取本机 `~/.ssh/config` 中的 `Host` 项。例如：
+
+```sshconfig
+Host hsy
+  HostName example.com
+  User root
+  IdentityFile ~/.ssh/id_rsa
+```
+
+先在终端验证：
+
+```bash
+ssh hsy
+```
+
+如果这一步不能连通，InternAgents 里也不能配置成功。
+
+## 配置步骤
+
+1. 打开 InternAgents 工作台。
+2. 点击左上角项目/工作区下拉框。
+3. 选择 `添加远程工作区`。
+4. 在弹窗里选择一个 SSH config Host。
+5. 填写工作区名称，例如 `HSY`。
+6. 填写远端工作区路径，例如：
+
+   ```text
+   ~/internagents-workspaces/hsy
+   ```
+
+7. 可选：填写本地 tunnel 端口。不填时会自动选择 `22025` 之后的可用端口。
+8. 可选：打开 `同步本机 .env 到远端 runtime`。
+9. 点击 `测试连接`。
+10. 测试通过后点击 `配置并选择`。
+
+配置完成后，InternAgents 会自动切换到新的远程工作区。
+
+## 安装目录和工作区目录
+
+- runtime 安装目录：InternAgents 自己使用，用来放远端 runtime 代码、虚拟环境、日志和 pid。
+- 工作区目录：用户项目文件目录，Agent 在这里读写文件。
+
+默认情况下：
+
+```text
+runtime 安装目录: ~/.internagents/runtimes/<resourceId>
+远端工作区目录: 你在弹窗里填写的路径
+```
+
+例如：
+
+```text
+~/.internagents/runtimes/remote1       # runtime 安装目录
+~/internagents-workspaces/hsy          # 工作区目录
+```
+
+请不要把项目文件放进 runtime 安装目录，也不要把 runtime 安装目录当成工作区。
+
+## 常见问题
+
+### 下拉框里没有某台机器
+
+确认这台机器是否在本机 `~/.ssh/config` 中有明确的 `Host` 配置。当前只读取 SSH config，不读取 shell alias，也不让用户手动输入完整 SSH 命令。
+
+### SSH 测试失败
+
+先在终端运行：
+
+```bash
+ssh <Host>
+```
+
+如果终端也失败，需要先修 SSH config、密钥、跳板机或网络。
+
+
 ## 常见任务新手教程
 
 ### 任务 1：总结一篇论文 PDF
