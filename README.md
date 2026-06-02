@@ -34,7 +34,7 @@ InternAgents 的主界面采用三栏工作台：
 - 中间是聊天区，用户可以直接输入任务、追加说明、附加图片或文件。
 - 右侧是文件预览区，可以查看 Markdown、文本、PDF 和常见图片。
 
-第一次打开时，InternAgents 会通过快速导览介绍工作台、工作区、会话、配置和更新入口，帮助新用户尽快理解整体流程。
+打开工作台后，InternAgents 可以通过快速导览介绍工作台、工作区、会话、配置和更新入口，帮助用户尽快理解整体流程。
 
 ![快速导览](用户手册/assets/user-manual/01-workbench-tour.png)
 
@@ -81,9 +81,9 @@ InternAgents 适合这些用户：
 
 ## 用户手册
 
-本仓库包含完整的新手版用户手册：
+本仓库包含完整的中文用户手册：
 
-- [在线 Markdown 手册](用户手册/user-manual.md)
-- [PDF 用户手册](用户手册/internagents-user-manual.pdf)
+- [用户手册网站](https://shuyuehu.github.io/InternAgents/user-manual/)
+- [Markdown 手册](用户手册/user-manual.md)
 
 用户手册会介绍工作台、文件预览、会话管理、附件、配置、技能、审批和常见问题。

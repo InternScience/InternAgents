@@ -34,7 +34,7 @@ The main interface uses a three-column workspace:
 - The center contains the chat area where users can enter tasks, add context, and attach images or files.
 - The right side provides file preview for Markdown, text, PDF, and common image formats.
 
-On first launch, InternAgents introduces the workspace, files, conversations, configuration, and update entry through a quick tour, helping new users understand the overall workflow.
+After opening the workspace, InternAgents can introduce the workspace, files, conversations, configuration, and update entry through a quick tour, helping users understand the overall workflow.
 
 ![Quick Tour](用户手册/assets/user-manual/01-workbench-tour.png)
 
@@ -77,9 +77,9 @@ InternAgents is suitable for:
 
 ## User Manual
 
-This repository includes a beginner-friendly user manual:
+This repository includes a Chinese user manual:
 
+- [User Manual Website](https://shuyuehu.github.io/InternAgents/user-manual/)
 - [Markdown User Manual](用户手册/user-manual.md)
-- [PDF User Manual](用户手册/internagents-user-manual.pdf)
 
 The manual covers the workspace, file preview, conversation management, attachments, configuration, skills, approval, and common questions.

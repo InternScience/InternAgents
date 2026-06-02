@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>InternAgents 用户手册</title>
+    <meta
+      name="description"
+      content="InternAgents 中文用户手册：工作台、任务教程、文件预览、审批、配置、技能和更新。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar" aria-label="章节导航">
+        <a class="brand" href="./">
+          <span class="brand-mark">IA</span>
+          <span>
+            <strong>InternAgents</strong>
+            <small>用户手册</small>
+          </span>
+        </a>
+        <nav id="sectionNav" class="section-nav" aria-label="用户手册章节">
+          <span class="loading">正在加载目录...</span>
+        </nav>
+      </aside>
+
+      <div class="page">
+        <header class="topbar">
+          <button id="menuButton" class="icon-button" type="button" aria-label="打开目录">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <a class="topbar-brand" href="./">InternAgents 用户手册</a>
+          <a class="repo-link" href="https://github.com/shuyuehu/InternAgents">GitHub</a>
+        </header>
+
+        <main class="layout">
+          <article id="manual" class="manual" aria-live="polite">
+            <div class="intro">
+              <p class="eyebrow">中文操作指南</p>
+              <h1>InternAgents 用户手册</h1>
+              <p>正在加载手册内容...</p>
+            </div>
+          </article>
+
+          <aside class="toc" aria-label="当前页面目录">
+            <div class="toc-card">
+              <p>本页目录</p>
+              <nav id="tocNav"></nav>
+            </div>
+          </aside>
+        </main>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
