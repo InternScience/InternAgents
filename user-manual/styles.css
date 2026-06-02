@@ -12,7 +12,6 @@
   --code: #102033;
   --shadow: 0 20px 55px rgba(18, 31, 50, 0.09);
   --sidebar: 282px;
-  --toc: 244px;
 }
 
 * {
@@ -198,9 +197,8 @@ a:hover {
 
 .layout {
   display: grid;
-  grid-template-columns: minmax(0, 860px) var(--toc);
-  gap: 34px;
-  width: min(100%, 1180px);
+  grid-template-columns: minmax(0, 920px);
+  width: min(100%, 1020px);
   margin: 0 auto;
   padding: 54px 32px 96px;
 }
@@ -396,50 +394,6 @@ a:hover {
   background: var(--panel-soft);
 }
 
-.toc {
-  position: sticky;
-  top: 32px;
-  align-self: start;
-  max-height: calc(100vh - 64px);
-  overflow-y: auto;
-}
-
-.toc-card {
-  border-left: 1px solid var(--border);
-  padding-left: 18px;
-}
-
-.toc-card p {
-  margin: 0 0 10px;
-  color: #475569;
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.toc nav {
-  display: grid;
-  gap: 4px;
-}
-
-.toc a {
-  display: block;
-  border-radius: 7px;
-  color: #64748b;
-  font-size: 13px;
-  line-height: 1.4;
-  padding: 5px 8px;
-}
-
-.toc a:hover,
-.toc a.active {
-  background: #edf7f8;
-  color: var(--accent-strong);
-}
-
-.toc a.level-3 {
-  margin-left: 10px;
-}
-
 body.nav-open .sidebar {
   transform: translateX(0);
 }
@@ -456,10 +410,6 @@ body.nav-open::after {
   .layout {
     grid-template-columns: minmax(0, 1fr);
     max-width: 920px;
-  }
-
-  .toc {
-    display: none;
   }
 }
 

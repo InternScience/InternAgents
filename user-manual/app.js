@@ -1,6 +1,5 @@
 const manualEl = document.querySelector("#manual");
 const sectionNav = document.querySelector("#sectionNav");
-const tocNav = document.querySelector("#tocNav");
 const menuButton = document.querySelector("#menuButton");
 
 function slugify(text) {
@@ -68,20 +67,8 @@ function renderSidebar(headings) {
     .join("");
 }
 
-function renderToc(headings) {
-  const tocHeadings = headings.filter((heading) => ["H2", "H3"].includes(heading.tagName));
-
-  tocNav.innerHTML = tocHeadings
-    .map((heading) => {
-      const label = escapeHtml(heading.textContent.trim());
-      const className = heading.tagName === "H3" ? "level-3" : "";
-      return `<a class="${className}" href="#${heading.id}">${label}</a>`;
-    })
-    .join("");
-}
-
 function observeActiveLinks(headings) {
-  const links = [...document.querySelectorAll(".section-nav a, .toc a")];
+  const links = [...document.querySelectorAll(".section-nav a")];
   const linkById = new Map();
 
   links.forEach((link) => {
@@ -135,7 +122,6 @@ async function loadManual() {
   manualEl.innerHTML = html;
   const headings = normalizeHeadingIds();
   renderSidebar(headings);
-  renderToc(headings);
   observeActiveLinks(headings);
 
   if (window.location.hash) {
