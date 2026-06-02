@@ -220,19 +220,6 @@ a:hover {
   padding: 16px 18px;
 }
 
-.lab-mark {
-  display: grid;
-  width: 52px;
-  height: 44px;
-  flex: none;
-  place-items: center;
-  border-radius: 8px;
-  background: #132033;
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 900;
-}
-
 .lab-strip strong,
 .lab-strip small {
   display: block;
