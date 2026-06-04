@@ -8,7 +8,7 @@ InternAgents 是由上海人工智能实验室研发的智能体工作台，面�
 
 我们提供了独立的中文用户手册网站：
 
-[打开 InternAgents 用户手册](https://shuyuehu.github.io/InternAgents/)
+[打开 InternAgents 用户手册](https://internscience.github.io/InternAgents/)
 
 网站会介绍工作台、任务教程、文件预览、会话管理、附件、配置、技能、审批和常见问题。
 
